@@ -33,6 +33,9 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
+# captured lead/support form submissions (contains customer PII — never commit)
+/data
+
 # vercel
 .vercel
 
