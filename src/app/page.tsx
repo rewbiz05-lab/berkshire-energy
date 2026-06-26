@@ -578,6 +578,9 @@ export default function Page() {
             <span>© {new Date().getFullYear()} Berkshire Energy. All rights reserved. ROC #000000.</span>
             <span>berkshireenergy.info</span>
           </div>
+          <div className="mt-3 text-xs text-white/40">
+            <a href="https://berkshireenergy.info/" className="hover:text-white">https://berkshireenergy.info/</a> is associated with ONYX SOLUTIONS LLC.
+          </div>
         </div>
       </footer>
 
