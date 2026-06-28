@@ -15,9 +15,15 @@ confident, local, anti-high-pressure — *"Own your power. Stop renting it."*
 > quote, bill photo, or "$X → $Y" result, get written permission and keep proof
 > on file. This mirrors the placeholder warning already in `src/app/page.tsx`.
 
+**Cover images:** Ready-to-use 1080×1920 PNG covers/thumbnails for each Reel are
+embedded below and live in [`assets/`](assets/). The editable source is the
+matching `.html` file (re-render with headless Chromium at a 1080×1920 window).
+
 ---
 
 ## Reel 1 — "Stop Renting Your Power"
+
+![Reel 1 cover — "Stop Renting Your Power" (1080×1920)](assets/reel1-cover.png)
 
 **Angle:** The rising-utility-bill pain point + $0-down switch. Hook with the
 summer bill shock every Phoenix homeowner feels.
@@ -69,6 +75,8 @@ summer bill shock every Phoenix homeowner feels.
 ---
 
 ## Reel 2 — "When the Grid Goes Down"
+
+![Reel 2 cover — "When the Grid Goes Down, You Stay On" (1080×1920)](assets/reel2-cover.png)
 
 **Angle:** Tesla Powerwall backup. Highly visual, emotional payoff — your house
 stays lit while the street goes dark. Differentiates from cheaper solar-only bids.

@@ -1,0 +1,118 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1920px; overflow:hidden; }
+  body {
+    font-family:'Liberation Sans','DejaVu Sans','Noto Color Emoji',sans-serif;
+    color:#fff; -webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(70% 40% at 50% 92%, rgba(255,170,60,0.22) 0%, rgba(255,170,60,0) 60%),
+      radial-gradient(100% 70% at 50% 0%, #0a2143 0%, #07101f 60%, #05080f 100%);
+  }
+  .stage { position:relative; width:1080px; height:1920px; padding:130px 96px 120px; display:flex; flex-direction:column; }
+
+  /* stars */
+  .stars { position:absolute; inset:0; overflow:hidden; }
+  .stars i { position:absolute; width:4px; height:4px; border-radius:50%; background:#cfe3ff; opacity:.5; }
+
+  header { position:relative; z-index:3; display:flex; align-items:center; gap:22px; }
+  header .mark { width:74px; height:74px; flex:none; }
+  header .wm .name { font-size:31px; font-weight:700; letter-spacing:7px; }
+  header .wm .tag { margin-top:9px; font-size:14px; font-weight:700; letter-spacing:4.5px; color:#7cc4ff; text-transform:uppercase; }
+
+  .content { position:relative; z-index:3; margin-top:96px; }
+  .eyebrow { display:inline-flex; align-items:center; gap:14px; padding:14px 26px; border:1px solid rgba(124,196,255,0.35);
+    background:rgba(124,196,255,0.10); border-radius:999px; font-size:22px; font-weight:700; letter-spacing:3px; color:#bfe0ff; }
+  .eyebrow .dot { width:12px; height:12px; border-radius:50%; background:#43e07b; box-shadow:0 0 16px 3px rgba(67,224,123,0.8); }
+
+  h1 { margin-top:38px; font-size:118px; line-height:0.94; font-weight:700; letter-spacing:-3px; text-shadow:0 8px 40px rgba(0,0,0,0.5); }
+  h1 .on { background:linear-gradient(95deg,#ffce7a 0%,#ffb648 50%,#43e07b 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  /* powerwall chip */
+  .pw { margin-top:64px; width:560px; max-width:100%; border-radius:30px; padding:34px 38px;
+    background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); backdrop-filter:blur(8px); }
+  .pw .top { display:flex; align-items:center; justify-content:space-between; }
+  .pw .lbl { font-size:24px; color:rgba(255,255,255,0.7); letter-spacing:1px; }
+  .pw .ready { display:inline-flex; align-items:center; gap:10px; padding:9px 18px; border-radius:999px;
+    background:rgba(67,224,123,0.18); color:#7be8a3; font-size:21px; font-weight:700; }
+  .pw .ready .d { width:11px; height:11px; border-radius:50%; background:#43e07b; }
+  .pw .pct { margin-top:22px; font-size:96px; font-weight:700; line-height:1; }
+  .pw .pct small { font-size:42px; opacity:.55; font-weight:600; }
+  .pw .sub { margin-top:8px; font-size:23px; color:rgba(255,255,255,0.6); }
+  .pw .bar { margin-top:22px; height:18px; border-radius:999px; background:rgba(255,255,255,0.12); overflow:hidden; }
+  .pw .bar > i { display:block; height:100%; width:92%; border-radius:999px; background:linear-gradient(90deg,#43e07b,#1a9f4b); }
+
+  /* skyline */
+  .city { position:absolute; left:0; right:0; bottom:300px; height:230px; z-index:2; display:flex; align-items:flex-end; justify-content:center; gap:34px; }
+  .glow { position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:520px; height:340px;
+    background:radial-gradient(circle at 50% 80%, rgba(255,184,72,0.45) 0%, rgba(255,138,30,0.12) 45%, transparent 70%); filter:blur(6px); }
+  .house { position:relative; width:150px; }
+  .house .roof { width:0; height:0; margin:0 auto; border-left:90px solid transparent; border-right:90px solid transparent; border-bottom:70px solid #0c1a30; }
+  .house .body { height:140px; background:#0c1a30; border-radius:8px 8px 0 0; display:flex; align-items:center; justify-content:center; gap:18px; }
+  .house .win { width:34px; height:34px; border-radius:6px; background:#10233f; }
+  .house.lit .roof { border-bottom-color:#16335a; }
+  .house.lit .body { background:#16335a; box-shadow:0 0 60px 8px rgba(255,184,72,0.35); }
+  .house.lit .win { background:#ffce7a; box-shadow:0 0 22px 4px rgba(255,206,122,0.9); }
+
+  footer { position:relative; z-index:3; margin-top:auto; }
+  .cta { display:flex; align-items:center; justify-content:space-between; gap:20px;
+    padding:34px 44px; border-radius:28px; font-size:32px; font-weight:700;
+    background:linear-gradient(95deg,#ffb648,#ff8a1e); color:#1a1205; box-shadow:0 24px 60px -18px rgba(255,138,30,0.55); }
+  .cta .phone { font-size:28px; opacity:.85; }
+</style></head>
+<body>
+  <div class="stage">
+    <div class="stars">
+      <i style="top:120px;left:240px"></i><i style="top:90px;left:520px"></i><i style="top:200px;left:820px"></i>
+      <i style="top:300px;left:160px"></i><i style="top:160px;left:940px"></i><i style="top:360px;left:640px"></i>
+      <i style="top:260px;left:400px"></i><i style="top:70px;left:720px"></i><i style="top:330px;left:900px"></i>
+    </div>
+
+    <header>
+      <svg class="mark" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="21" stroke="rgba(255,255,255,0.55)" stroke-width="1.4"/>
+        <path d="M7 17a18 18 0 0 1 31-3" stroke="#78beff" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M41 31a18 18 0 0 1-31 3" stroke="#78beff" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M27 4 13 27h8.2L18 44l17.5-25H26.5L31 4 27 4Z" fill="url(#b)" stroke="rgba(180,225,255,0.9)" stroke-width="0.8" stroke-linejoin="round"/>
+        <path d="M27 4 13 27h4L29 8l-2-4Z" fill="#fff" opacity="0.45"/>
+        <defs><linearGradient id="b" x1="14" y1="6" x2="36" y2="42" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#5bb6ff"/><stop offset="0.5" stop-color="#1273e6"/><stop offset="1" stop-color="#0a47a8"/>
+        </linearGradient></defs>
+      </svg>
+      <div class="wm">
+        <div class="name">BERKSHIRE ENERGY</div>
+        <div class="tag">Powering tomorrow. Delivering today.</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="eyebrow"><span class="dot"></span>TESLA POWERWALL BACKUP</div>
+      <h1>WHEN THE<br>GRID GOES<br>DOWN,<br><span class="on">YOU STAY ON.</span></h1>
+
+      <div class="pw">
+        <div class="top">
+          <span class="lbl">Powerwall status</span>
+          <span class="ready"><span class="d"></span>Backup ready</span>
+        </div>
+        <div class="pct">92<small>%</small></div>
+        <div class="sub">≈ 18 hours of essential backup remaining</div>
+        <div class="bar"><i></i></div>
+      </div>
+    </div>
+
+    <div class="city">
+      <div class="glow"></div>
+      <div class="house"><div class="roof"></div><div class="body"><div class="win"></div><div class="win"></div></div></div>
+      <div class="house"><div class="roof"></div><div class="body"><div class="win"></div><div class="win"></div></div></div>
+      <div class="house lit"><div class="roof"></div><div class="body"><div class="win"></div><div class="win"></div></div></div>
+      <div class="house"><div class="roof"></div><div class="body"><div class="win"></div><div class="win"></div></div></div>
+      <div class="house"><div class="roof"></div><div class="body"><div class="win"></div><div class="win"></div></div></div>
+    </div>
+
+    <footer>
+      <div class="cta">
+        <span class="url">🔋 Free quote → berkshireenergy.info</span>
+        <span class="phone">(623) 396-2112</span>
+      </div>
+    </footer>
+  </div>
+</body></html>

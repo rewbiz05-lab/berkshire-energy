@@ -1,0 +1,114 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1080px; height:1920px; overflow:hidden; }
+  body {
+    font-family:'Liberation Sans','DejaVu Sans','Noto Color Emoji',sans-serif;
+    color:#fff; -webkit-font-smoothing:antialiased;
+    background:
+      radial-gradient(120% 80% at 82% 8%, rgba(255,150,40,0.30) 0%, rgba(255,150,40,0) 42%),
+      radial-gradient(90% 60% at 12% 100%, rgba(18,115,230,0.22) 0%, rgba(18,115,230,0) 55%),
+      linear-gradient(158deg, #0b1f3a 0%, #081628 52%, #0a1a32 100%);
+  }
+  .stage { position:relative; width:1080px; height:1920px; padding:130px 96px 120px; display:flex; flex-direction:column; }
+  .grid-fade {
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size:90px 90px;
+    -webkit-mask-image:radial-gradient(120% 75% at 50% 18%, #000 0%, transparent 70%);
+    mask-image:radial-gradient(120% 75% at 50% 18%, #000 0%, transparent 70%);
+  }
+  .flare { position:absolute; top:-180px; right:-160px; width:620px; height:620px; border-radius:50%;
+    background:radial-gradient(circle, rgba(255,182,72,0.55) 0%, rgba(255,138,30,0.18) 38%, transparent 68%);
+    filter:blur(8px); }
+
+  header { position:relative; z-index:2; display:flex; align-items:center; gap:22px; }
+  header .mark { width:74px; height:74px; flex:none; }
+  header .wm { line-height:1; }
+  header .wm .name { font-size:31px; font-weight:700; letter-spacing:7px; }
+  header .wm .tag { margin-top:9px; font-size:14px; font-weight:700; letter-spacing:4.5px; color:#7cc4ff; text-transform:uppercase; }
+
+  .content { position:relative; z-index:2; margin-top:auto; margin-bottom:auto; }
+  .eyebrow { display:inline-flex; align-items:center; gap:14px; padding:14px 26px; border:1px solid rgba(255,255,255,0.18);
+    background:rgba(255,255,255,0.06); border-radius:999px; font-size:23px; font-weight:700; letter-spacing:3px; }
+  .eyebrow .dot { width:13px; height:13px; border-radius:50%; background:#ffb648; box-shadow:0 0 16px 3px rgba(255,182,72,0.8); }
+
+  h1 { margin-top:40px; font-size:138px; line-height:0.95; font-weight:700; letter-spacing:-3px; text-shadow:0 8px 40px rgba(0,0,0,0.4); }
+  h1 .solar { background:linear-gradient(95deg,#ffce7a 0%,#ff8a1e 100%); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  .compare { margin-top:62px; display:flex; gap:26px; }
+  .card { flex:1; border-radius:30px; padding:34px 36px; }
+  .card .k { font-size:22px; letter-spacing:2px; text-transform:uppercase; opacity:.7; }
+  .card .v { margin-top:14px; font-size:74px; font-weight:700; line-height:1; }
+  .card .v small { font-size:30px; font-weight:600; opacity:.6; }
+  .card .s { margin-top:14px; font-size:23px; }
+  .util { background:rgba(0,0,0,0.28); border:1px solid rgba(255,255,255,0.10); }
+  .util .s { color:#ff8f7f; }
+  .sol { background:rgba(255,138,30,0.16); border:1px solid rgba(255,182,72,0.45); }
+  .sol .k { color:#ffce7a; opacity:1; }
+  .sol .s { color:#ffd08a; }
+
+  .badges { margin-top:50px; display:flex; flex-wrap:wrap; gap:18px; }
+  .badges span { padding:16px 28px; border-radius:999px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.14);
+    font-size:25px; font-weight:700; letter-spacing:1px; }
+
+  footer { position:relative; z-index:2; margin-top:auto; }
+  .cta { display:flex; align-items:center; justify-content:space-between; gap:20px;
+    padding:34px 40px; border-radius:28px; font-size:30px; font-weight:700;
+    background:linear-gradient(95deg,#ffb648,#ff8a1e); color:#1a1205; box-shadow:0 24px 60px -18px rgba(255,138,30,0.6); }
+  .cta .url { letter-spacing:0.3px; white-space:nowrap; }
+  .cta .phone { font-size:27px; opacity:.85; white-space:nowrap; }
+</style></head>
+<body>
+  <div class="stage">
+    <div class="grid-fade"></div>
+    <div class="flare"></div>
+
+    <header>
+      <svg class="mark" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="21" stroke="rgba(255,255,255,0.55)" stroke-width="1.4"/>
+        <path d="M7 17a18 18 0 0 1 31-3" stroke="#78beff" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M41 31a18 18 0 0 1-31 3" stroke="#78beff" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M27 4 13 27h8.2L18 44l17.5-25H26.5L31 4 27 4Z" fill="url(#b)" stroke="rgba(180,225,255,0.9)" stroke-width="0.8" stroke-linejoin="round"/>
+        <path d="M27 4 13 27h4L29 8l-2-4Z" fill="#fff" opacity="0.45"/>
+        <defs><linearGradient id="b" x1="14" y1="6" x2="36" y2="42" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#5bb6ff"/><stop offset="0.5" stop-color="#1273e6"/><stop offset="1" stop-color="#0a47a8"/>
+        </linearGradient></defs>
+      </svg>
+      <div class="wm">
+        <div class="name">BERKSHIRE ENERGY</div>
+        <div class="tag">Powering tomorrow. Delivering today.</div>
+      </div>
+    </header>
+
+    <div class="content">
+      <div class="eyebrow"><span class="dot"></span>ARIZONA SOLAR + BATTERY</div>
+      <h1>STOP<br>RENTING<br>YOUR <span class="solar">POWER.</span></h1>
+
+      <div class="compare">
+        <div class="card util">
+          <div class="k">Utility bill</div>
+          <div class="v">$236<small>/mo</small></div>
+          <div class="s">▲ rising ~4% every year</div>
+        </div>
+        <div class="card sol">
+          <div class="k">With solar</div>
+          <div class="v">$119<small>/mo</small></div>
+          <div class="s">● fixed payment, locked in</div>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span>$0 DOWN</span><span>25-YR WARRANTY</span><span>TESLA POWERWALL</span>
+      </div>
+    </div>
+
+    <footer>
+      <div class="cta">
+        <span class="url">☀️ Free quote → berkshireenergy.info</span>
+        <span class="phone">(623) 396-2112</span>
+      </div>
+    </footer>
+  </div>
+</body></html>
